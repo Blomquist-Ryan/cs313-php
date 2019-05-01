@@ -1,0 +1,17 @@
+div:hover{
+    font-weight: bolder;
+
+}
+#first{
+    color: burlywood;
+    background-color: cornsilk;
+}
+
+#second{
+    color: aqua;
+    background-color: black;
+}
+#third{
+    color: darkslategrey;
+    background-color: brown;
+}
