@@ -10,7 +10,7 @@
         <h1>
             Homepage
         </h1>
-        <img src="me.JPG" alt="picture of me" id="me" onclick="changePicture(1)">
+        <img src="me.JPG" alt="picture of me" id="me" onclick="changePicture()">
         <p>
             My name is Ryan Blomquist. I am from Houston TX, but I spent several years in California. <br>
             I wrestled in High School and become pretty good almost going to state. <br>
