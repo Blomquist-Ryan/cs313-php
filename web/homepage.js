@@ -1,5 +1,5 @@
-function changePicture(){
-     var pic = 1;
+function changePicture(pic){
+     
      switch(pic){
          case 1:
             document.getElementById("me").src="me.JPG";
