@@ -1,3 +1,4 @@
+var pic = 1;
 function changePicture(pic){
      
      switch(pic){
