@@ -1,5 +1,5 @@
 function changePicture(){
-     var pic = 0;
+     var pic = 1;
      switch(pic){
          case 1:
             document.getElementById("me").src="me.JPG";
@@ -15,7 +15,7 @@ function changePicture(){
             break;
         case 4:
             document.getElementById("me").src="modeling3.JPG";
-            pic = 0;
+            pic = 1;
             break;
 
      }
