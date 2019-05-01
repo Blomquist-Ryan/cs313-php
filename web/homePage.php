@@ -10,6 +10,7 @@
         <h1>
             Homepage
         </h1>
+        <hr>
         <img src="me.JPG" alt="picture of me" id="me" onclick="changePicture()">
         <p>
             My name is Ryan Blomquist. I am from Houston TX, but I spent several years in California. <br>
@@ -21,6 +22,10 @@
         </p>
         <p>
             assignments can be viewed <a href="assignments.html">here</a>.
+            <?php
+                echo "the date is " . date("Y/m/d") . "<br>";
+                echo "the time is " . date("h/i/sa");
+            ?>
         </p>
         
     </body>
