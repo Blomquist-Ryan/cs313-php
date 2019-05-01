@@ -6,19 +6,19 @@ div:hover{
 #first{
     color: burlywood;
     background-color: cornsilk;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 #second{
     color: aqua;
     background-color: black;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 #third{
     color: darkslategrey;
-    background-color: mediumblue;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    background-color: chocolate;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
