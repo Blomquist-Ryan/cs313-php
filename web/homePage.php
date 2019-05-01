@@ -21,10 +21,10 @@
             my roomate and we hope to finish one of them.
         </p>
         <p>
-            assignments can be viewed <a href="assignments.html">here</a>.
+            assignments can be viewed <a href="assignments.html">here</a>. <br>
             <?php
                 echo "the date is " . date("Y/m/d") . "<br>";
-                echo "the time is " . date("h/i/sa");
+                echo "The time is " . date("h:i:sa");
             ?>
         </p>
         
