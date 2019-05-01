@@ -1,17 +1,24 @@
 div:hover{
     font-weight: bolder;
+    font-size: 150%;
 
 }
 #first{
     color: burlywood;
     background-color: cornsilk;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 #second{
     color: aqua;
     background-color: black;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 #third{
     color: darkslategrey;
-    background-color: brown;
+    background-color: mediumblue;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
