@@ -3,6 +3,6 @@ function fireAlert(){
 }
 
 function colorChange(){
-    var color = document.getElementById("colorChange").value;
+    var color = document.getElementById("firstColor").value;
     document.getElementById("first").style.backgroundColor = color;
 }
