@@ -1,5 +1,5 @@
 var pic = 1;
-function changePicture(p){
+function changePicture(){
      
      switch(pic){
          case 1:
