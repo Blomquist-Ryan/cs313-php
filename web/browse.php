@@ -6,9 +6,9 @@ session_start();
     <head>
         <script>
             function add(){
-                var item = document.getElementById("thing").value;
-                <?php 
-                $_SESSION["item"] = item;
+                <?php $item = document.getElementById("thing").value;
+                
+                $_SESSION["item"] = $item;
                 ?>
             }
         </script>
