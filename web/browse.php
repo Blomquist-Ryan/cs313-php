@@ -1,26 +1,8 @@
-<?php
-session_start();
-?>
-
 <html>
     <head>
-       <!--  <script>
-            function add(){
-                <?php $item = document.getElementById("thing").value;
-                
-                $_SESSION["item"] = $item;
-                ?>
-            }
-        </script> -->
+        <title>shopping cart</title>
     </head>
     <body>
-    <!-- <a href="cart.php">cart</a> -->
-
-    <?php echo "something" ?>
-    <p>there should be some text here</p>
-    <input type="text" name="" id="thing">
-    <input type="button" value="Add Item" onclick="add()">
-    <?php echo $_SESSION["item"];
-    ?>
+        this should display stuff or maybe not
     </body>
 </html>
