@@ -4,6 +4,7 @@
         <title>shopping cart</title>
     </head>
     <body>
-        this should display stuff or maybe not
+        this is an item for sale <br>
+        <input type="radio" name="item1" id="item1" value="10">a thing
     </body>
 </html>
