@@ -4,14 +4,14 @@ session_start();
 
 <html>
     <head>
-        <script>
+       <!--  <script>
             function add(){
                 <?php $item = document.getElementById("thing").value;
                 
                 $_SESSION["item"] = $item;
                 ?>
             }
-        </script>
+        </script> -->
     </head>
     <body>
     <!-- <a href="cart.php">cart</a> -->
