@@ -1,10 +1,13 @@
 <?php session_start() ;
 
-echo "Your shopping cart contains: <br>";
+echo "Your shopping cart contains: <br> <form action=\"\" method=\"POST\">";
 foreach($_SESSION["cart"] as $product){
     echo $product . "<input type=\"checkbox\" name=\"item[]\" id=\"$product\" value=\"$product\">";
     echo "<br>";
 }
+
+echo "<input type=\"submit\" value=\"remove item\"> </form>";
+
 if(!isset($_SESSION["remove"])){
     $_SESSION["remove"] = array();
 }
@@ -22,9 +25,9 @@ foreach($toRemove as $removable){
     </head>
     <body>
         <hr>
-        <form action="" method="POST">
+        <!-- <form action="" method="POST">
             <input type="submit" value="remove item">
-        </form>
+        </form> -->
 
 
 
