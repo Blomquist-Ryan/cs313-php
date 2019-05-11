@@ -2,9 +2,18 @@
 
 echo "Your shopping cart contains: <br>";
 foreach($_SESSION["cart"] as $product){
-    echo $product . "<input type=\"checkbox\" name=\"item[]\" id=\"backpack\" value=\"backPack\">";
+    echo $product . "<input type=\"checkbox\" name=\"item[]\" id=\"$product\" value=\"$product\">";
     echo "<br>";
 }
+if(!isset($_SESSION["remove"])){
+    $_SESSION["remove"] = array();
+}
+$toRemove = $items = $_POST["item"];
+foreach($toRemove as $removable){
+    session_unset(array_search($removable, $_SESSION["cart"]));
+}
+
+
 
 ?>
 <html>
@@ -13,7 +22,9 @@ foreach($_SESSION["cart"] as $product){
     </head>
     <body>
         <hr>
-        remove item?
+        <form action="" method="POST">
+            <input type="submit" value="remove item">
+        </form>
 
 
 
