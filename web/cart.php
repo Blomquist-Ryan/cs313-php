@@ -1,6 +1,6 @@
 <?php session_start() ;
 
-echo 'Your shopping cart contains: <br> <form  method="POST" action="$_SERVER["PHP_SELF"]" >';
+echo 'Your shopping cart contains: <br> <form  method="POST" action="cart.php" >';
 foreach($_SESSION["cart"] as $product){
     echo $product . "<input type=\"checkbox\" name=\"item[]\" id=\"$product\" value=\"$product\">";
     echo "<br>";
