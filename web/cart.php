@@ -1,6 +1,9 @@
 <?php session_start() ;
 
 echo "Your shopping cart contains:";
-print( array_values($_SESSION["cart"]));
-echo "<br>";
+foreach($_SESSION["cart"] as $item){
+    echo $item;
+    echo "<br>";
+}
+
 ?>
