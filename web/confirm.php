@@ -1,8 +1,12 @@
 <?php session_start() ;
+ $_SESSION["address"] = $_POST["address"];
+ $_SESSION["city"] = $_POST["city"];
+ $_SESSION["state"] = $_POST["state"];
+ $_SESSION["zip"] = $_POST["zip"];
 
 echo 'Your shopping cart contains: <br> <form  method="POST" action="cart.php" >';
 foreach($_SESSION["cart"] as $product){
-    echo $product . "<input type=\"checkbox\" name=\"item[]\" id=\"$product\" value=\"$product\">";
+    echo $product;
     echo "<br>";
 }
 echo "the shipping addres is:" . $_SESSION["address"] . " " . $_SESSION["city"] . ", " .  $_SESSION["state"] . ", " .  $_SESSION["zip"]
