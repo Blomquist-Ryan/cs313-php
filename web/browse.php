@@ -25,6 +25,6 @@
 
         <input type="submit" value="submit">
     </form>
-    <a href="cart.php"></a>
+    <a href="cart.php">cart</a>
     </body>
 </html>
