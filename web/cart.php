@@ -16,6 +16,9 @@ if(!isset($_SESSION["remove"])){
 $toRemove = $items = $_POST["item"];
 foreach($toRemove as $removable){
     echo $removable;
+    if($removable == array_search($_SESSION["cart"], $removable)){
+        unset($_SESSION[$removable]);
+    }
 }
 
 
