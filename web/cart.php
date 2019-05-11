@@ -8,14 +8,21 @@ foreach($_SESSION["cart"] as $product){
 
 echo "<input type=\"submit\" value=\"remove item\"> </form>";
 
+
+if(isChecked('item', 'bakcpack')){
+
+}
+
+
+
 if(!isset($_SESSION["remove"])){
     $_SESSION["remove"] = array();
 }
 $toRemove = $items = $_POST["item"];
 foreach($toRemove as $removable){
-    session_unset(array_search($removable, $_SESSION["cart"]));
+    unset(array_search($removable, $_SESSION["cart"]));
 }
-
+ 
 
 
 ?>
