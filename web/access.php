@@ -20,7 +20,8 @@ catch (PDOException $ex)
   echo 'Error!: ' . $ex->getMessage();
   die();
 }
-foreach($db->query('SELECT * FROM person') as $row)
+foreach($db->query('SELECT * FROM person JOIN comp_analysis AS c ON person.comp_analysis_id = c.id') as $row)
 {
-    echo 'user' . $row['name'];
+    echo 'user: ' . $row['name'] . "<br>";
+    echo 'intra: ' . $row['intra'];
 }
