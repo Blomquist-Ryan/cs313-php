@@ -20,9 +20,10 @@ catch (PDOException $ex)
   echo 'Error!: ' . $ex->getMessage();
   die();
 }
-foreach($db->query('SELECT * FROM person, muscle, comp_analysis') as $row)
+foreach($db->query('SELECT * FROM person, muscle, comp_analysis, obesity, seg_fat') as $row)
 {
-    echo 'user: ' . $row['name'] . "<br>";
+    echo 'user: ' . $row['name'] . "<br> <hr>";
+
     echo 'Intracellular Water: ' . $row['intra'] . "<br>";
     echo 'Extracellular Water: ' . $row['extra'] . "<br>";
     echo 'Dry Lean Mass: ' . $row['dry_lean'] . "<br>";
@@ -30,5 +31,13 @@ foreach($db->query('SELECT * FROM person, muscle, comp_analysis') as $row)
 
     echo 'weight: ' . $row['weight'] . "<br>";
     echo 'Skeletal Muscle Mass: ' . $row['smm'] . "<br>";
-    echo 'Body Fat Mass: ' . $row['fat'] . "<br>";
+    echo 'Body Fat Mass: ' . $row['fat'] . "<br> <hr>";
+
+    echo 'BMI: ' . $row['bmi'] . "<br>";
+    echo 'PBF: ' . $row['pbf'] . "<br>";
+    echo 'Right Arm: ' . $row['rarm'] . "<br>";
+    echo 'Left Arm: ' .  $row['larm'] . "<br>";
+    echo 'Trunk: ' .     $row['trunk'] . "<br>";
+    echo 'Right Leg: ' . $row['rleg'] . "<br>";
+    echo 'Left Leg: ' .  $row['lleg'] . "<br>";
 }
