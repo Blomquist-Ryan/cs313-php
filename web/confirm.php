@@ -9,7 +9,7 @@ foreach($_SESSION["cart"] as $product){
     echo $product;
     echo "<br>";
 }
-echo "the shipping addres is:" . htmlspecialchar($_SESSION["address"]) . " " . $_SESSION["city"] . ", " .  $_SESSION["state"] . ", " .  $_SESSION["zip"]
+echo "the shipping addres is:" . htmlspecialchar($_SESSION["address"])lpp[][] . " " . $_SESSION["city"] . ", " .  $_SESSION["state"] . ", " .  $_SESSION["zip"]
 ?>
 <html>
     <head>
