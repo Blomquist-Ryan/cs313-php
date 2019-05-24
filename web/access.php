@@ -20,7 +20,7 @@ catch (PDOException $ex)
   echo 'Error!: ' . $ex->getMessage();
   die();
 }
-foreach($db->query('SELECT * FROM person, muscle, comp_analysis, obesity, seg_fat') as $row)
+foreach($db->query('SELECT * FROM person, muscle, comp_analysis, obesity, seg_fat, history') as $row)
 {
     echo 'user: ' . $row['name'] . "<br> <hr>";
 
@@ -39,5 +39,10 @@ foreach($db->query('SELECT * FROM person, muscle, comp_analysis, obesity, seg_fa
     echo 'Left Arm: ' .  $row['larm'] . "<br>";
     echo 'Trunk: ' .     $row['trunk'] . "<br>";
     echo 'Right Leg: ' . $row['rleg'] . "<br>";
-    echo 'Left Leg: ' .  $row['lleg'] . "<br>";
+    echo 'Left Leg: ' .  $row['lleg'] . "<br> <hr>";
+
+    echo 'Weight: ' . $row['weight'] . "<br>";
+    echo 'Skelatal Muscle Mass: ' . $row['smm'] . "<br>";
+    echo 'PBF: ' . $row['pbf'] . "<br>";
+    echo 'ECW/TBW: ' . $row['water'] . "<br>";
 }
