@@ -23,7 +23,7 @@ catch (PDOException $ex)
 }
 
 if(isset(POST['intra'])){
-  $db->query('INSERT INTO person(intra, extra) VALUES $POST["intra"], $POST["extra"]');
+  $db->query('INSERT INTO person(intra, extra) VALUES' . $POST["intra"], $POST["extra"]);
 }
 ?>
 <form action="access.php" method="post">
