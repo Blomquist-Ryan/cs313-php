@@ -23,6 +23,7 @@ catch (PDOException $ex)
 }
 
 if(isset(POST['intra'])){
+  echo " <br> <br> there is something in the intra field <br> <br>";
   $db->query('INSERT INTO comp_anlaysis(intra, extra) VALUES' . $POST["intra"], $POST["extra"]);
 }
 ?>
