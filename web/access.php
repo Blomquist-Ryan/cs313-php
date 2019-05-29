@@ -1,4 +1,5 @@
 <?php
+
 try
 {
   $dbUrl = getenv('DATABASE_URL');
@@ -20,6 +21,17 @@ catch (PDOException $ex)
   echo 'Error!: ' . $ex->getMessage();
   die();
 }
+
+if(isset(POST['intra'])){
+  $db->query('INSERT INTO person(intra, extra)');
+}
+?>
+<form action="access.php" method="post">
+  Intracellular Water: <input type="text" name="intra" id="inta" required> <br>
+  Extracellular Water: <input type="text" name="extra" id="extra" required> <br>
+  <input type="submit" value="submit">
+</form>
+<?php
 foreach($db->query('SELECT * FROM person, muscle, comp_analysis, obesity, seg_fat, history') as $row)
 {
     echo 'user: ' . $row['name'] . "<br> <hr>";
