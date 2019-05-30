@@ -18,12 +18,15 @@ $db = get_db();
 
 <?php
 try{
+  if(isset($POST['intra']))
+  {
   echo " <br> <br> there is something in the intra field <br> <br>";
   $query ='INSERT INTO comp_anlaysis(intra, extra) VALUES(:intra, :extra) ';
   $statement = $db->prepare($query);
   $statement->bindValue(':intra',$POST["intra"] );
   $statement->bindValue(':extra',$POST["extra"]);
   $statement->execute();
+}
   
 }
 catch(PDOException $ex)
