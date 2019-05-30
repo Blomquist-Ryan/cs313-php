@@ -1,9 +1,23 @@
 <?php
 require("Dbconnect.php");
 $db = get_db();
+?>
+<!DOCTYPE html>
+<html>
+  <body>
+    <form action="access.php" method="post">
+  Intracellular Water: <input type="text" name="intra" id="inta" required> <br>
+  Extracellular Water: <input type="text" name="extra" id="extra" required> <br>
+  <input type="submit" name="submit" value="submit">
+</form>
+  </body>
+</html>
 
 
-if(isset($POST['submit'])){
+
+
+<?php
+try{
   echo " <br> <br> there is something in the intra field <br> <br>";
   $query ='INSERT INTO comp_anlaysis(intra, extra) VALUES(:intra, :extra) ';
   $statement = $db->prepare($query);
@@ -12,15 +26,12 @@ if(isset($POST['submit'])){
   $statement->execute();
   
 }
+catch(PDOException $ex)
+{
+  echo "error";
+  die();
+}
 ?>
-<form action="access.php" method="post">
-  Intracellular Water: <input type="text" name="intra" id="inta" required> <br>
-  Extracellular Water: <input type="text" name="extra" id="extra" required> <br>
-  <input type="submit" name="submit" value="submit">
-</form>
-
-
-
 
 
 
