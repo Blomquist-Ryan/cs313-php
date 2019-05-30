@@ -1,37 +1,29 @@
 <?php
+require(Dbconnect.php);
+$db = get_db();
 
-try
-{
-  $dbUrl = getenv('DATABASE_URL');
 
-  $dbOpts = parse_url($dbUrl);
-
-  $dbHost = $dbOpts["host"];
-  $dbPort = $dbOpts["port"];
-  $dbUser = $dbOpts["user"];
-  $dbPassword = $dbOpts["pass"];
-  $dbName = ltrim($dbOpts["path"],'/');
-
-  $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-
-  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
-catch (PDOException $ex)
-{
-  echo 'Error!: ' . $ex->getMessage();
-  die();
-}
-
-if(isset(POST['intra'])){
+if(isset($POST['submit'])){
   echo " <br> <br> there is something in the intra field <br> <br>";
-  $db->query('INSERT INTO comp_anlaysis(intra, extra) VALUES' . $POST["intra"], $POST["extra"]);
+  $query ='INSERT INTO comp_anlaysis(intra, extra) VALUES(:intra, :extra) ';
+  $statement = $db->prepare($query);
+  $statement->bindValue(':intra',$POST["intra"] );
+  $statement->bindValue(':extra',$POST["extra"]);
+  $statement->execute();
+  
 }
 ?>
 <form action="access.php" method="post">
   Intracellular Water: <input type="text" name="intra" id="inta" required> <br>
   Extracellular Water: <input type="text" name="extra" id="extra" required> <br>
-  <input type="submit" value="submit">
+  <input type="submit" name="submit" value="submit">
 </form>
+
+
+
+
+
+
 <?php
 foreach($db->query('SELECT * FROM person, muscle, comp_analysis, obesity, seg_fat, history') as $row)
 {
