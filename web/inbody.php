@@ -7,6 +7,7 @@ $stmt = $db->prepare($query);
 $stmt->execute();
 $tests = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $user = $stmt->fetch();
+var_dump($tests);
 var_dump($user);
 $name = $user['name'];
 ?>
