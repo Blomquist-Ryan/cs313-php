@@ -16,7 +16,7 @@ $db = get_db();
 
 
 
-<?php
+<!-- <?php
 try{
   if(isset($POST['intra']))
   {
@@ -34,7 +34,7 @@ catch(PDOException $ex)
   echo "error";
   die();
 }
-?>
+?> -->
 
 
 
@@ -63,5 +63,5 @@ foreach($db->query('SELECT * FROM person, muscle, comp_analysis, obesity, seg_fa
     echo 'Weight: ' . $row['weight'] . "<br>";
     echo 'Skelatal Muscle Mass: ' . $row['smm'] . "<br>";
     echo 'PBF: ' . $row['pbf'] . "<br>";
-    echo 'ECW/TBW: ' . $row['water'] . "<br>";
+    echo 'ECW/TBW: ' . $row['water'] . "<br> <br> <br> <br> <br>";
 }

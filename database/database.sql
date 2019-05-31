@@ -2,6 +2,8 @@ CREATE TABLE Person
 (
 	User_id SERIAL NOT NULL PRIMARY KEY	,
 	Name VARCHAR(50) NOT NULL,
+	INumber INT NOT NULL,
+	date DATE NOT NULL,
 	Comp_analysis_id INT NOT NULL REFERENCES Comp_analysis(id),
 	Muscle_fat_id INT NOT NULL REFERENCES Muscle(id),
 	Obesity_id INT NOT NULL REFERENCES Obesity(id),
@@ -56,3 +58,10 @@ CREATE TABLE History
 	PBF REAL NOT NULL,
 	Water REAL NOT NULL
 );
+ INSERT INTO person VALUES(2, 'Ryan Blomquist', 087097322, '02-25-2019', 2, 2, 2, 2, 2);
+ INSERT INTO History VALUES (2, 148.1, 81.1, 4.5, .366);
+ INSERT INTO Lean VALUES (2, 8.09, 8.25, 63.1, 22.42, 21.96);
+ INSERT INTO Seg_fat VALUES(2, .2, .2, 1.1, 1.5, 1.5);
+ INSERT INTO Obesity VALUES(2, 20.7, 4.5, 2);
+ INSERT INTO Muscle VALUES(2, 148.1, 81.1, 6.6);
+ INSERT INTO Comp_analysis VALUES(2, 65.5, 38.1, 37.9, 6.6);
