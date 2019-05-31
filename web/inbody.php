@@ -6,7 +6,7 @@ $query = 'SELECT user_id, name, date FROM person';
 $stmt = $db->prepare($query);
 $stmt->execute();
 $tests = $stmt->fetchAll(PDO::FETCH_ASSOC);
-$user = $stmt->fetch();
+$user = $stmt->fetch($stmt['name']);
 var_dump($tests);
 var_dump($user);
 $name = $user['name'];
