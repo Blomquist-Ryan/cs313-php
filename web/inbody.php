@@ -6,6 +6,7 @@ $query = 'SELECT user_id, name, date FROM person';
 $stmt = $db->prepare($query);
 $stmt->execute();
 $tests = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$name = $tests['name'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -15,7 +16,7 @@ $tests = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </title>
     </head>
   <body>
-      <h1><?php echo '$tests["name"]'?></h1>
+      <h1><?php echo " $name" ?></h1>
       <?php
       foreach($tests as $test)
       {
