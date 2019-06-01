@@ -32,14 +32,44 @@ $llegl = htmlspecialchars($_POST['LlegL']);
 
 $water = htmlspecialchars($_POST['water']);
 
-try{
+echo "$name <br>
+$inum <br>
+
+$date<br>
+$intra <br>
+$extra <br>
+$drylean <br>
+$fat<br>
+$weight <br>
+$SMM <br>
+
+$BMI <br>
+$PBF<br>
+$rarm <br>
+$larm <br>
+$trunk <br>
+$rleg <br>
+$lleg <br>
+
+
+$rarml<br>
+$larml <br>
+$trunkl <br>
+$rlegl <br>
+$llegl<br>
+
+
+$water 
+"
+
+/* try{
     
 
 $stmtp = $db->prepare('INSERT INTO person(name, inumber, date) Values(:name, :inum, :date);');
 $stmtp->bindValue(':name', $name, PDO::PARAM_STR);
 $stmtp->bindValue(':inum', $inum, PDO::PARAM_INT);
-// $stmtp->bindValue(':date', $date, PDO::PARAM_STR);
-$stmtp->execute();
+ $stmtp->bindValue(':date', $date, PDO::PARAM_STR);
+$stmtp->execute(); */
 
 /* $stmtc = $db->prepare('INSERT INTO comp_analysis(intra, extra, dry_lean, Body_fat) Values(:intra, :extra, :drylean, :bodyfat);');
 $stmtc->bindValue(':intra', $intra, PDO::PARAM_INT);
