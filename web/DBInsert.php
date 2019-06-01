@@ -114,10 +114,10 @@ $stmtm->execute(); */
 
 header("location: inbody.php");
 die();
-}
+/* }
 catch(PDOException $ex)
 {
   echo "error";
   die();
-}
+} */
 ?>
