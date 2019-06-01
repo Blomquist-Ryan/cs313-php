@@ -7,44 +7,35 @@ if(!isset($_GET['id']))
   die("Error id not set");
 };
 $id = htmlspecialchars($_GET['id']);
-?>
-<!DOCTYPE html>
-<html>
-  <body>
-    <form action="access.php" method="post">
 
-  <input type="submit" name="submit" value="submit">
-</form>
-  </body>
-</html>
-
-
-
-
-<!-- <?php
 try{
-  if(isset($POST['intra']))
-  {
-  echo " <br> <br> there is something in the intra field <br> <br>";
-  $query ='INSERT INTO comp_anlaysis(intra, extra) VALUES(:intra, :extra) ';
-  $statement = $db->prepare($query);
-  $statement->bindValue(':intra',$POST["intra"] );
-  $statement->bindValue(':extra',$POST["extra"]);
-  $statement->execute();
-}
-  
+
+
+$stmt  = $db->prepare('SELECT * FROM seg_fat WHERE id=:id');
+$stmt->bindValue(':id', $id, PDO::PARAM_INT);
+$stmt->execute();
+$tests = $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 catch(PDOException $ex)
 {
   echo "error";
   die();
 }
-?> -->
+?>
+<!DOCTYPE html>
+<html>
+  <body>
+ 
+
+  </body>
+</html>
+
 
 
 
 <?php
-foreach($db->query('SELECT * FROM person, muscle, comp_analysis, obesity, seg_fat, history') as $row)
+// foreach($db->query('SELECT * FROM person, muscle, comp_analysis, obesity, seg_fat, history') as $row)
+foreach($test as $row)
 {
     echo 'user: ' . $row['name'] . "<br> <hr>";
 
