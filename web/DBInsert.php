@@ -32,6 +32,8 @@ $llegl = htmlspecialchars($_POST['LlegL']);
 
 $water = htmlspecialchars($_POST['water']);
 
+try{
+    
 
 $stmtp = $db->prepare('INSERT INTO person(name, inumber, date) Values(:name, :inum, :date);');
 $stmtp->bindValue(':name', $name, PDO::PARAM_STR);
@@ -82,4 +84,10 @@ $stmtm->execute();
 
 header("location: inbody.php");
 die();
+}
+catch(PDOException $ex)
+{
+  echo "error";
+  die();
+}
 ?>
