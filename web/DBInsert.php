@@ -65,7 +65,7 @@ $water
 try{
     
 
-$stmtp = $db->prepare('INSERT INTO person(name, inumber) Values(:name, :inum)');
+$stmtp = $db->prepare('INSERT INTO person(name, inumber) Values(:name, :inum);');
 $stmtp->bindValue(':name', $name, PDO::PARAM_STR);
 $stmtp->bindValue(':inum', $inum, PDO::PARAM_INT);
  //$stmtp->bindValue(':date', $date, PDO::PARAM_STR);
