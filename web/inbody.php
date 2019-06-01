@@ -8,6 +8,8 @@ $stmt = $db->prepare($query);
 $stmt->execute();
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 $name = $user['name'];
+$num = $user['user_id'];
+$date = $user['date'];
 
 
 $tests = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -23,6 +25,7 @@ $tests = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <body>
       <h1><?php echo  $name; ?></h1>
       <?php
+      echo "Test $num on $date <br>";
       foreach($tests as $test)
       {
           $num = $test['user_id'];
