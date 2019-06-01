@@ -35,7 +35,7 @@ catch(PDOException $ex)
 
 <?php
 // foreach($db->query('SELECT * FROM person, muscle, comp_analysis, obesity, seg_fat, history') as $row)
-foreach($test as $row)
+foreach($tests as $row)
 {
     echo 'user: ' . $row['name'] . "<br> <hr>";
 
