@@ -33,6 +33,7 @@ $tests = $stmt->fetchAll(PDO::FETCH_ASSOC);
           echo " Test $num on $date <br>";
       }
       ?>
+      <a href="insertInB.php">Add InBody</a>
 
     
 </form>
