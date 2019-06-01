@@ -37,7 +37,7 @@ catch(PDOException $ex)
 <?php
 foreach($tests as $row)
 {
-    echo 'user: ' . $row['name'] . "<br> <hr>";
+    echo '<h2>user: ' . $row['name'] . "<br></h2> <hr>";
 
     echo "<h3>Body Composition Analysis</h3>";
     echo '<p>Intracellular Water: ' . $row['intra'] . "<br>";
