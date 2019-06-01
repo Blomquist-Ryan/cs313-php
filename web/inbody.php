@@ -9,16 +9,8 @@ $stmt->execute();
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 $name = $user['name'];
 
-/* $nameQuery = $db->prepare("SELECT name FROM person WHERE id=?");
-$nameQuery->execute(['name']);
-$name = $nameQuery->fetchColumn();
 
-$stmt = $db->prepare($query);
-$stmt->execute();
 $tests = $stmt->fetchAll(PDO::FETCH_ASSOC);
-$user = $stmt->fetch(PDO::FETCH_ASSOC);
-echo 'here is something new <br>';
-var_dump($name); */
 
 ?>
 <!DOCTYPE html>
