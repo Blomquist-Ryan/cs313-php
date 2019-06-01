@@ -4,7 +4,12 @@ $db = get_db();
 
 $query = 'SELECT user_id, name, date FROM person';
 
-$nameQuery = $db->prepare("SELECT name FROM person WHERE id=?");
+$stmt = $db->prepare($query);
+$stmt->execute();
+$user - $stmt->fetch(PDO::FETCH_ASSOC);
+var_dump($user);
+
+/* $nameQuery = $db->prepare("SELECT name FROM person WHERE id=?");
 $nameQuery->execute(['name']);
 $name = $nameQuery->fetchColumn();
 
@@ -13,7 +18,7 @@ $stmt->execute();
 $tests = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 echo 'here is something new <br>';
-var_dump($name);
+var_dump($name); */
 
 ?>
 <!DOCTYPE html>
@@ -30,7 +35,7 @@ var_dump($name);
       {
           $num = $test['user_id'];
           $date = $test['date'];
-          echo " Test $num on $date";
+          echo " Test $num on $date <br>";
       }
       ?>
 
