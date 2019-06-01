@@ -68,7 +68,7 @@ try{
 $stmtp = $db->prepare('INSERT INTO person(name, inumber, date) Values(:name, :inum, :date)');
 $stmtp->bindValue(':name', $name, PDO::PARAM_STR);
 $stmtp->bindValue(':inum', $inum, PDO::PARAM_INT);
- $stmtp->bindValue(':date', $date, PDO::PARAM_STR);
+ //$stmtp->bindValue(':date', $date, PDO::PARAM_STR);
 $stmtp->execute(); 
 
 /* $stmtc = $db->prepare('INSERT INTO comp_analysis(intra, extra, dry_lean, Body_fat) Values(:intra, :extra, :drylean, :bodyfat);');
