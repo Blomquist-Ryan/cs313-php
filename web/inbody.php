@@ -7,7 +7,7 @@ $query = 'SELECT user_id, name, date FROM person';
 $stmt = $db->prepare($query);
 $stmt->execute();
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
-var_dump($user);
+$name = $user['name'];
 
 /* $nameQuery = $db->prepare("SELECT name FROM person WHERE id=?");
 $nameQuery->execute(['name']);
