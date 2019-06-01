@@ -11,7 +11,7 @@ $id = htmlspecialchars($_GET['id']);
 try{
 
 
-$stmt  = $db->prepare('SELECT * FROM seg_fat WHERE id=:id');
+$stmt  = $db->prepare('SELECT * FROM seg_fat, muscle WHERE id=:id');
 $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 $stmt->execute();
 $tests = $stmt->fetchAll(PDO::FETCH_ASSOC);
