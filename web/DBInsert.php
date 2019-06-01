@@ -110,11 +110,11 @@ $stmtm->bindValue(':weight', $weight, PDO::PARAM_INT);
 $stmtm->bindValue(':smm', $smm, PDO::PARAM_INT);
 $stmtm->bindValue(':pbf', $name, PDO::PARAM_INT);
 $stmtm->bindValue(':water', $water, PDO::PARAM_INT);
-$stmtm->execute(); */
+$stmtm->execute(); 
 
 header("location: inbody.php");
 die();
-/* }
+ }
 catch(PDOException $ex)
 {
   echo "error";
