@@ -12,7 +12,7 @@ try{
 
 
 $stmt  = $db->prepare('SELECT * FROM seg_fat s, muscle m, comp_analysis c, history h, lean l, obesity o, person p, 
-  WHERE s.id=:id AND m.id=:id AND c.id=:id AND h.id=:id AND l.id=:id AND o.id=:id AND p.user_id=:id');
+  WHERE s.id=:id AND m.id=:id /* AND c.id=:id AND h.id=:id AND l.id=:id AND o.id=:id AND p.user_id=:id */');
 $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 $stmt->execute();
 $tests = $stmt->fetchAll(PDO::FETCH_ASSOC);
