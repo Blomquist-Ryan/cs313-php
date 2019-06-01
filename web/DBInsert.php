@@ -9,10 +9,10 @@ $date = htmlspecialchars($_POST['date']);
 $intra = htmlspecialchars($_POST['intra']);
 $extra = htmlspecialchars($_POST['extra']);
 $drylean = htmlspecialchars($_POST['dry_lean']);
-$fatmass = htmlspecialchars($_POST['fatmass']);
+$fat = htmlspecialchars($_POST['fat']);
 
 $weight = htmlspecialchars($_POST['date']);
-$SMM = htmlspecialchars($_POST['smm']);
+$SMM = htmlspecialchars($_POST['SMM']);
 
 $BMI = htmlspecialchars($_POST['BMI']);
 $PBF = htmlspecialchars($_POST['pbf']);
@@ -23,7 +23,7 @@ $rleg = htmlspecialchars($_POST['RlegF']);
 $lleg = htmlspecialchars($_POST['LlegF']);
 
 
-$rarml = htmlspecialchars($_POST['Rarml']);
+$rarml = htmlspecialchars($_POST['RarmL']);
 $larml = htmlspecialchars($_POST['LarmL']);
 $trunkl = htmlspecialchars($_POST['trunkL']);
 $rlegl = htmlspecialchars($_POST['RlegL']);
@@ -45,13 +45,13 @@ $stmtc = $db->prepare('INSERT INTO comp_analysis(intra, extra, dry_lean, Body_fa
 $stmtc->bindValue(':intra', $intra, PDO::PARAM_INT);
 $stmtc->bindValue(':extra', $extra, PDO::PARAM_INT);
 $stmtc->bindValue(':drylean', $drylean, PDO::PARAM_INT);
-$stmtc->bindValue(':bodyfat', $fatmass, PDO::PARAM_INT);
+$stmtc->bindValue(':bodyfat', $fat, PDO::PARAM_INT);
 $stmtc->execute();
 
 $stmtm = $db->prepare('INSERT INTO muscle(weight, smm, fat) Values(:weight, :smm, :fat);');
 $stmtm->bindValue(':weight', $weight, PDO::PARAM_INT);
 $stmtm->bindValue(':smm', $smm, PDO::PARAM_INT);
-$stmtm->bindValue(':fat', $fatmass, PDO::PARAM_INT);
+$stmtm->bindValue(':fat', $fat, PDO::PARAM_INT);
 $stmtm->execute();
 
 $stmto = $db->prepare('INSERT INTO obesity(bmi, pbf) Values(:bmi, :pbf);');
@@ -75,7 +75,7 @@ $stmtl->bindValue(':rlegl', $rlegl, PDO::PARAM_INT);
 $stmtl->bindValue(':llegl', $llegl, PDO::PARAM_INT);
 $stmtl->execute();
 
-$stmtm = $db->prepare('INSERT INTO muscle(weight, smm, pbf, water) Values(:weight :smm, :pbf, :water);');
+$stmtm = $db->prepare('INSERT INTO history(weight, smm, pbf, water) Values(:weight :smm, :pbf, :water);');
 $stmtm->bindValue(':weight', $weight, PDO::PARAM_INT);
 $stmtm->bindValue(':smm', $smm, PDO::PARAM_INT);
 $stmtm->bindValue(':pbf', $name, PDO::PARAM_INT);
