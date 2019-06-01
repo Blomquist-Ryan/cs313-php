@@ -25,12 +25,12 @@ $tests = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <body>
       <h1><?php echo  $name; ?></h1>
       <?php
-      echo "Test $num on $date <br>";
+      echo " <a href='access.php?id=$num'> Test $num on $date <br>";
       foreach($tests as $test)
       {
           $num = $test['user_id'];
           $date = $test['date'];
-          echo " Test $num on $date <br>";
+          echo " <a href='access.php?id=$num'> Test $num on $date <br>";
       }
       ?>
       <a href="insertInB.php">Add InBody</a>

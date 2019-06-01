@@ -1,13 +1,18 @@
 <?php
 require("Dbconnect.php");
 $db = get_db();
+
+if(isset($_GET['id']))
+{
+  die("Error id not set");
+};
+$id = htmlspecialchar($_GET['id']);
 ?>
 <!DOCTYPE html>
 <html>
   <body>
     <form action="access.php" method="post">
-  Intracellular Water: <input type="text" name="intra" id="inta" required> <br>
-  Extracellular Water: <input type="text" name="extra" id="extra" required> <br>
+
   <input type="submit" name="submit" value="submit">
 </form>
   </body>
