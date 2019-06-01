@@ -2,7 +2,7 @@
 require("Dbconnect.php");
 $db = get_db();
 
-if(isset($_GET['id']))
+if(!isset($_GET['id']))
 {
   die("Error id not set");
 };
