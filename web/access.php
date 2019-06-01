@@ -6,7 +6,7 @@ if(!isset($_GET['id']))
 {
   die("Error id not set");
 };
-$id = htmlspecialchar($_GET['id']);
+$id = $_GET['id'];
 ?>
 <!DOCTYPE html>
 <html>
