@@ -33,52 +33,52 @@ $llegl = htmlspecialchars($_POST['LlegL']);
 $water = htmlspecialchars($_POST['water']);
 
 
-$stmt = $db->prepare('INSERT INTO person(name, inumber, date) Values(:name, :inum, :date);');
-$stmt->bindValue(':name', $name, PDO::PARAM_STR);
-$stmt->bindValue(':inum', $inum, PDO::PARAM_INT);
-$stmt->bindValue(':date', $date, PDO::PARAM_STR);
-$stmt->execute();
+$stmtp = $db->prepare('INSERT INTO person(name, inumber, date) Values(:name, :inum, :date);');
+$stmtp->bindValue(':name', $name, PDO::PARAM_STR);
+$stmtp->bindValue(':inum', $inum, PDO::PARAM_INT);
+$stmtp->bindValue(':date', $date, PDO::PARAM_STR);
+$stmtp->execute();
 
-$stmt = $db->prepare('INSERT INTO comp_analysis(intra, extra, dry_lean, Body_fat) Values(:intra, :extra, :drylean, :bodyfat);');
-$stmt->bindValue(':intra', $intra, PDO::PARAM_INT);
-$stmt->bindValue(':extra', $extra, PDO::PARAM_INT);
-$stmt->bindValue(':drylean', $drylean, PDO::PARAM_INT);
-$stmt->bindValue(':bodyfat', $fatmass, PDO::PARAM_INT);
-$stmt->execute();
+$stmtc = $db->prepare('INSERT INTO comp_analysis(intra, extra, dry_lean, Body_fat) Values(:intra, :extra, :drylean, :bodyfat);');
+$stmtc->bindValue(':intra', $intra, PDO::PARAM_INT);
+$stmtc->bindValue(':extra', $extra, PDO::PARAM_INT);
+$stmtc->bindValue(':drylean', $drylean, PDO::PARAM_INT);
+$stmtc->bindValue(':bodyfat', $fatmass, PDO::PARAM_INT);
+$stmtc->execute();
 
-$stmt = $db->prepare('INSERT INTO muscle(weight, smm, fat) Values(:weight, :smm, :fat);');
-$stmt->bindValue(':weight', $weight, PDO::PARAM_INT);
-$stmt->bindValue(':smm', $smm, PDO::PARAM_INT);
-$stmt->bindValue(':fat', $fatmass, PDO::PARAM_INT);
-$stmt->execute();
+$stmtm = $db->prepare('INSERT INTO muscle(weight, smm, fat) Values(:weight, :smm, :fat);');
+$stmtm->bindValue(':weight', $weight, PDO::PARAM_INT);
+$stmtm->bindValue(':smm', $smm, PDO::PARAM_INT);
+$stmtm->bindValue(':fat', $fatmass, PDO::PARAM_INT);
+$stmtm->execute();
 
-$stmt = $db->prepare('INSERT INTO obesity(bmi, pbf) Values(:bmi, :pbf);');
-$stmt->bindValue(':bmi', $name, PDO::PARAM_INT);
-$stmt->bindValue(':pbf', $name, PDO::PARAM_INT);
-$stmt->execute();
+$stmto = $db->prepare('INSERT INTO obesity(bmi, pbf) Values(:bmi, :pbf);');
+$stmto->bindValue(':bmi', $name, PDO::PARAM_INT);
+$stmto->bindValue(':pbf', $name, PDO::PARAM_INT);
+$stmto->execute();
 
-$stmt = $db->prepare('INSERT INTO seg_fat(rarm, larm, trunk, rleg, lleg) Values(:rarm, :larm, :trunk, :rleg, :lleg);');
-$stmt->bindValue(':rarm', $rarm, PDO::PARAM_INT);
-$stmt->bindValue(':larm', $larm, PDO::PARAM_INT);
-$stmt->bindValue(':trunk', $trunk, PDO::PARAM_INT);
-$stmt->bindValue(':rleg', $rleg, PDO::PARAM_INT);
-$stmt->bindValue(':lleg', $lleg, PDO::PARAM_INT);
-$stmt->execute();
+$stmtf = $db->prepare('INSERT INTO seg_fat(rarm, larm, trunk, rleg, lleg) Values(:rarm, :larm, :trunk, :rleg, :lleg);');
+$stmtf->bindValue(':rarm', $rarm, PDO::PARAM_INT);
+$stmtf->bindValue(':larm', $larm, PDO::PARAM_INT);
+$stmtf->bindValue(':trunk', $trunk, PDO::PARAM_INT);
+$stmtf->bindValue(':rleg', $rleg, PDO::PARAM_INT);
+$stmtf->bindValue(':lleg', $lleg, PDO::PARAM_INT);
+$stmtf->execute();
 
-$stmt = $db->prepare('INSERT INTO lean(rarml, larml, trunkl, rlegl, llegl) Values(:rarml, :larml, :trunkl, :rlegl, :llegl);');
-$stmt->bindValue(':rarml', $rarml, PDO::PARAM_INT);
-$stmt->bindValue(':larml', $larml, PDO::PARAM_INT);
-$stmt->bindValue(':trunkl', $trunkl, PDO::PARAM_INT);
-$stmt->bindValue(':rlegl', $rlegl, PDO::PARAM_INT);
-$stmt->bindValue(':llegl', $llegl, PDO::PARAM_INT);
-$stmt->execute();
+$stmtl = $db->prepare('INSERT INTO lean(rarml, larml, trunkl, rlegl, llegl) Values(:rarml, :larml, :trunkl, :rlegl, :llegl);');
+$stmtl->bindValue(':rarml', $rarml, PDO::PARAM_INT);
+$stmtl->bindValue(':larml', $larml, PDO::PARAM_INT);
+$stmtl->bindValue(':trunkl', $trunkl, PDO::PARAM_INT);
+$stmtl->bindValue(':rlegl', $rlegl, PDO::PARAM_INT);
+$stmtl->bindValue(':llegl', $llegl, PDO::PARAM_INT);
+$stmtl->execute();
 
-$stmt = $db->prepare('INSERT INTO muscle(weight, smm, pbf, water) Values(:weight :smm, :pbf, :water);');
-$stmt->bindValue(':weight', $weight, PDO::PARAM_INT);
-$stmt->bindValue(':smm', $smm, PDO::PARAM_INT);
-$stmt->bindValue(':pbf', $name, PDO::PARAM_INT);
-$stmt->bindValue(':water', $water, PDO::PARAM_INT);
-$stmt->execute();
+$stmtm = $db->prepare('INSERT INTO muscle(weight, smm, pbf, water) Values(:weight :smm, :pbf, :water);');
+$stmtm->bindValue(':weight', $weight, PDO::PARAM_INT);
+$stmtm->bindValue(':smm', $smm, PDO::PARAM_INT);
+$stmtm->bindValue(':pbf', $name, PDO::PARAM_INT);
+$stmtm->bindValue(':water', $water, PDO::PARAM_INT);
+$stmtm->execute();
 
 header("location: inbody.php");
 die();
