@@ -41,6 +41,7 @@ $db = get_db();
 
 
   <input type="submit" name="submit" value="submit">
+  <a href="inbody.php">  return</a>
 </form>
   </body>
 </html>
