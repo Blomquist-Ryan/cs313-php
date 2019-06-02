@@ -4,7 +4,7 @@ $db = get_db();
 
 $name = htmlspecialchars($_POST['name']);
 $inum = htmlspecialchars($_POST['iNum']);
-$id = htmlspecialchars($_POST['id']) + 1;
+$id = htmlspecialchars($_POST['id']);
 
 $date = htmlspecialchars($_POST['date']);
 $intra = htmlspecialchars($_POST['intra']);
@@ -32,6 +32,7 @@ $llegl = htmlspecialchars($_POST['LlegL']);
 
 
 $water = htmlspecialchars($_POST['water']);
+$id +=1;
 
 echo "$name <br>
 $inum <br>
