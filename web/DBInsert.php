@@ -70,11 +70,12 @@ try{
 
 
 
- $stmtc = $db->prepare('INSERT INTO comp_analysis(intra, extra, dry_lean, Body_fat) Values(:intra, :extra, :drylean, :bodyfat);');
+ $stmtc = $db->prepare('INSERT INTO comp_analysis(intra, extra, dry_lean, Body_fat, water) Values(:intra, :extra, :drylean, :bodyfat, :water);');
 $stmtc->bindValue(':intra', $intra, PDO::PARAM_INT);
 $stmtc->bindValue(':extra', $extra, PDO::PARAM_INT);
 $stmtc->bindValue(':drylean', $drylean, PDO::PARAM_INT);
 $stmtc->bindValue(':bodyfat', $fat, PDO::PARAM_INT);
+$stmtc->bindValue(':water', $water, PDO::PARAM_INT);
 $stmtc->execute();
 }
 catch(PDOException $ex)
