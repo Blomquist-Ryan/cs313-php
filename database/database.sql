@@ -68,3 +68,5 @@ INSERT INTO person VALUES(1, 'Ryan Blomquist', 087097322, '01-21-2019', 1, 1, 1,
  INSERT INTO Obesity VALUES(2, 20.7, 4.5, 2);
  INSERT INTO Muscle VALUES(2, 148.1, 81.1, 6.6);
  INSERT INTO Comp_analysis VALUES(2, 65.5, 38.1, 37.9, 6.6);
+
+ SELECT * FROM Comp_analysis, Muscle, Obesity, Lean, Seg_fat, History, person;

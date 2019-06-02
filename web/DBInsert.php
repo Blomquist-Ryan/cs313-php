@@ -77,17 +77,14 @@ $stmtc->bindValue(':drylean', $drylean, PDO::PARAM_INT);
 $stmtc->bindValue(':bodyfat', $fat, PDO::PARAM_INT);
 $stmtc->execute();
 
-/*
+
 $stmtm = $db->prepare('INSERT INTO muscle(weight, smm, fat) Values(:weight, :smm, :fat);');
 $stmtm->bindValue(':weight', $weight, PDO::PARAM_INT);
 $stmtm->bindValue(':smm', $smm, PDO::PARAM_INT);
 $stmtm->bindValue(':fat', $fat, PDO::PARAM_INT);
 $stmtm->execute();
 
-$stmto = $db->prepare('INSERT INTO obesity(bmi, pbf) Values(:bmi, :pbf);');
-$stmto->bindValue(':bmi', $name, PDO::PARAM_INT);
-$stmto->bindValue(':pbf', $name, PDO::PARAM_INT);
-$stmto->execute();
+
 
 $stmtf = $db->prepare('INSERT INTO seg_fat(rarm, larm, trunk, rleg, lleg) Values(:rarm, :larm, :trunk, :rleg, :lleg);');
 $stmtf->bindValue(':rarm', $rarm, PDO::PARAM_INT);
@@ -96,6 +93,11 @@ $stmtf->bindValue(':trunk', $trunk, PDO::PARAM_INT);
 $stmtf->bindValue(':rleg', $rleg, PDO::PARAM_INT);
 $stmtf->bindValue(':lleg', $lleg, PDO::PARAM_INT);
 $stmtf->execute();
+
+$stmto = $db->prepare('INSERT INTO obesity(bmi, pbf) Values(:bmi, :pbf);');
+$stmto->bindValue(':bmi', $name, PDO::PARAM_INT);
+$stmto->bindValue(':pbf', $name, PDO::PARAM_INT);
+$stmto->execute();
 
 $stmtl = $db->prepare('INSERT INTO lean(rarml, larml, trunkl, rlegl, llegl) Values(:rarml, :larml, :trunkl, :rlegl, :llegl);');
 $stmtl->bindValue(':rarml', $rarml, PDO::PARAM_INT);
@@ -119,7 +121,7 @@ $stmtp->bindValue(':inum', $inum , PDO::PARAM_INT );
 $stmtp->execute(); 
 
 header("location: inbody.php");
-die();*/
+die();
  }
 catch(PDOException $ex)
 {
