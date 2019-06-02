@@ -4,6 +4,7 @@ $db = get_db();
 
 $name = htmlspecialchars($_POST['name']);
 $inum = htmlspecialchars($_POST['iNum']);
+$id = htmlspecialchars($_POST['id']) + 1;
 
 $date = htmlspecialchars($_POST['date']);
 $intra = htmlspecialchars($_POST['intra']);
@@ -11,7 +12,7 @@ $extra = htmlspecialchars($_POST['extra']);
 $drylean = htmlspecialchars($_POST['dry_lean']);
 $fat = htmlspecialchars($_POST['fat']);
 
-$weight = htmlspecialchars($_POST['date']);
+$weight = htmlspecialchars($_POST['weight']);
 $SMM = htmlspecialchars($_POST['SMM']);
 
 $BMI = htmlspecialchars($_POST['BMI']);
@@ -34,6 +35,7 @@ $water = htmlspecialchars($_POST['water']);
 
 echo "$name <br>
 $inum <br>
+$id <br>
 
 $date<br>
 $intra <br>
@@ -65,11 +67,7 @@ $water
 try{
     
 
-$stmtp = $db->prepare('INSERT INTO person(name, inumber) Values(:name, :inum);');
-$stmtp->bindValue(':name', $name/* , PDO::PARAM_STR */);
-$stmtp->bindValue(':inum', $inum/* , PDO::PARAM_INT */);
- //$stmtp->bindValue(':date', $date, PDO::PARAM_STR);
-$stmtp->execute(); 
+
 
 /* $stmtc = $db->prepare('INSERT INTO comp_analysis(intra, extra, dry_lean, Body_fat) Values(:intra, :extra, :drylean, :bodyfat);');
 $stmtc->bindValue(':intra', $intra, PDO::PARAM_INT);
@@ -112,6 +110,12 @@ $stmtm->bindValue(':pbf', $name, PDO::PARAM_INT);
 $stmtm->bindValue(':water', $water, PDO::PARAM_INT);
 $stmtm->execute(); 
 */
+$stmtp = $db->prepare('INSERT INTO person(name, inumber) Values(:name, :inum);');
+$stmtp->bindValue(':name', $name/* , PDO::PARAM_STR */);
+$stmtp->bindValue(':inum', $inum/* , PDO::PARAM_INT */);
+ $stmtp->bindValue(':date', $date, PDO::PARAM_STR);
+$stmtp->execute(); 
+
 header("location: inbody.php");
 die();
  }

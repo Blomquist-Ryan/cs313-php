@@ -9,6 +9,7 @@ $stmt->execute();
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 $name = $user['name'];
 $inum = $user['inumber'];
+$id = $user['user_id']
 
 ?>
 <!DOCTYPE html>
@@ -22,6 +23,7 @@ $inum = $user['inumber'];
         <h3>Body Composition Analysis</h3>
         <input type="hidden" name="name" value="<?php echo $name ?>">
         <input type="hidden" name="iNum" value="<?php echo $inum ?>">
+        <input type="hidden" name="id" value="<?php echo $id ?>">
         Intracellular Water: <input type="text" name="intra" id="inta" required> <br>
         Extracellular Water: <input type="text" name="extra" id="extra" required> <br>
         Dry Lean Mass: <input type="text" name="dry_lean" id="dry_lean" required> <br>
