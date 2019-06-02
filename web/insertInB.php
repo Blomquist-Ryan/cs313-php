@@ -11,8 +11,8 @@ $username = $user['username'];
 $inum = $user['inumber'];
 $id = $user['id'];
 echo "$id <br>";
-echo "$user <br>";
-echo "$id <br>";
+echo "$username <br>";
+echo "$inum <br>";
 
 ?>
 <!DOCTYPE html>
