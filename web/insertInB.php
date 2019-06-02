@@ -7,10 +7,12 @@ $query = 'SELECT id, username, inumber FROM person';
 $stmt = $db->prepare($query);
 $stmt->execute();
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
-$user = $user['username'];
+$username = $user['username'];
 $inum = $user['inumber'];
 $id = $user['id'];
-echo "$id";
+echo "$id <br>";
+echo "$user <br>";
+echo "$id <br>";
 
 ?>
 <!DOCTYPE html>
