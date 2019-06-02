@@ -114,7 +114,7 @@ $stmtm->bindValue(':pbf', $name, PDO::PARAM_INT);
 $stmtm->bindValue(':water', $water, PDO::PARAM_INT);
 $stmtm->execute(); 
 
-$stmtp = $db->prepare('INSERT INTO person(name, inumber) Values(:name, :inum);');
+$stmtp = $db->prepare('INSERT INTO person(name, inumber date) Values(:name, :inum :date);');
 $stmtp->bindValue(':name', $name , PDO::PARAM_STR );
 $stmtp->bindValue(':inum', $inum , PDO::PARAM_INT );
  $stmtp->bindValue(':date', $date, PDO::PARAM_STR);
