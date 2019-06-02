@@ -22,7 +22,7 @@ echo "$id";
         <hr>
 
         <h3>Body Composition Analysis</h3>
-        <input type="hidden" name="name" value="<?php echo $user ?>">
+        <input type="hidden" name="username" value="<?php echo $user ?>">
         <input type="hidden" name="iNum" value="<?php echo $inum ?>">
         <input type="hidden" name="id" value="<?php echo $id ?>">
         Intracellular Water: <input type="text" name="intra" id="inta" required> <br>
