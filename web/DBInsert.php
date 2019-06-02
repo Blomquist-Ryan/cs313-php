@@ -2,17 +2,17 @@
 require("Dbconnect.php");
 $db = get_db();
 
-$name = htmlspecialchars($_POST['name']);
+$username= htmlspecialchars($_POST['username']);
 $inum = htmlspecialchars($_POST['iNum']);
 $id = htmlspecialchars($_POST['id']);
 
-$date = htmlspecialchars($_POST['date']);
+$date = htmlspecialchars($_POST['datte']);
 $intra = htmlspecialchars($_POST['intra']);
 $extra = htmlspecialchars($_POST['extra']);
 $drylean = htmlspecialchars($_POST['dry_lean']);
 $fat = htmlspecialchars($_POST['fat']);
 
-$weight = htmlspecialchars($_POST['weight']);
+$mass = htmlspecialchars($_POST['mass']);
 $SMM = htmlspecialchars($_POST['SMM']);
 
 $BMI = htmlspecialchars($_POST['BMI']);
@@ -34,7 +34,7 @@ $llegl = htmlspecialchars($_POST['LlegL']);
 $water = htmlspecialchars($_POST['water']);
 
 
-echo "$name <br>
+echo "$username<br>
 $inum <br>
 $id <br>
 
@@ -43,7 +43,7 @@ $intra <br>
 $extra <br>
 $drylean <br>
 $fat<br>
-$weight <br>
+$mass <br>
 $SMM <br>
 
 $BMI <br>
@@ -79,21 +79,21 @@ $stmtc->execute();
 }
 catch(PDOException $ex)
 {
-  echo "error with comp_anal insert";
+  echo "error with comp_anal insert <br>";
 
 } 
 
 try
 {
-$stmtm = $db->prepare('INSERT INTO muscle(weight, smm, fat) Values(:weight, :smm, :fat);');
-$stmtm->bindValue(':weight', $weight, PDO::PARAM_INT);
+$stmtm = $db->prepare('INSERT INTO muscle(mass, smm, fat) Values(:mass, :smm, :fat);');
+$stmtm->bindValue(':mass', $mass, PDO::PARAM_INT);
 $stmtm->bindValue(':smm', $smm, PDO::PARAM_INT);
 $stmtm->bindValue(':fat', $fat, PDO::PARAM_INT);
 $stmtm->execute();
 }
 catch(PDOException $ex)
 {
-  echo "error with muscle insert";
+  echo "error with muscle insert <br>";
   
 } 
 
@@ -109,20 +109,20 @@ $stmtf->execute();
 }
 catch(PDOException $ex)
 {
-  echo "error with seg fat insert";
+  echo "error with seg fat insert <br>";
   
 }
 
 try
 {
 $stmto = $db->prepare('INSERT INTO obesity(bmi, pbf) Values(:bmi, :pbf);');
-$stmto->bindValue(':bmi', $name, PDO::PARAM_INT);
-$stmto->bindValue(':pbf', $name, PDO::PARAM_INT);
+$stmto->bindValue(':bmi', $BMI, PDO::PARAM_INT);
+$stmto->bindValue(':pbf', $PBF, PDO::PARAM_INT);
 $stmto->execute();
 }
 catch(PDOException $ex)
 {
-  echo "error with obesity insert";
+  echo "error with obesity insert <br>";
   
 }
 
@@ -138,31 +138,31 @@ $stmtl->execute();
 }
 catch(PDOException $ex)
 {
-  echo "error with lean insert";
+  echo "error with lean insert <br>";
   
 }
 
 try
 {
-$stmtm = $db->prepare('INSERT INTO history(weight, smm, pbf, water) Values(:weight :smm, :pbf, :water);');
-$stmtm->bindValue(':weight', $weight, PDO::PARAM_INT);
+$stmtm = $db->prepare('INSERT INTO history(mass, smm, pbf, water) Values(:mass :smm, :pbf, :water);');
+$stmtm->bindValue(':mass', $mass, PDO::PARAM_INT);
 $stmtm->bindValue(':smm', $smm, PDO::PARAM_INT);
-$stmtm->bindValue(':pbf', $name, PDO::PARAM_INT);
+$stmtm->bindValue(':pbf', $PBF, PDO::PARAM_INT);
 $stmtm->bindValue(':water', $water, PDO::PARAM_INT);
 $stmtm->execute(); 
 }
 catch(PDOException $ex)
 {
-  echo "error with history insert";
+  echo "error with history insert <br>";
   
 }
 
 try
 {
-$stmtp = $db->prepare('INSERT INTO person(name, inumber, date) Values(:name, :inum, :date);');
-$stmtp->bindValue(':name', $name , PDO::PARAM_STR );
-$stmtp->bindValue(':inum', $inum , PDO::PARAM_INT );
- $stmtp->bindValue(':date', $date, PDO::PARAM_STR);
+$stmtp = $db->prepare('INSERT INTO person(username, inumber, datte) Values(:username :inum, :datte);');
+$stmtp->bindValue(':username', $username, PDO::PARAM_STR );
+$stmtp->bindValue(':inum', $inum, PDO::PARAM_INT );
+ $stmtp->bindValue(':datte', $datte, PDO::PARAM_STR);
 $stmtp->execute(); 
 
 header("location: inbody.php");

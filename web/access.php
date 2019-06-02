@@ -12,7 +12,7 @@ try{
 
 
 $stmt  = $db->prepare('SELECT * FROM seg_fat s, muscle m, comp_analysis c, history h, lean l, obesity o, person p 
-  WHERE s.id=:id AND m.id=:id  AND c.id=:id AND h.id=:id AND l.id=:id AND o.id=:id AND p.user_id=:id ');
+  WHERE s.id=:id AND m.id=:id  AND c.id=:id AND h.id=:id AND l.id=:id AND o.id=:id AND p.id=:id ');
 $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 $stmt->execute();
 $tests = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -37,7 +37,7 @@ catch(PDOException $ex)
 <?php
 foreach($tests as $row)
 {
-    echo '<h2>user: ' . $row['name'] . "<br></h2> <hr>";
+    echo '<h2>user: ' . $row['username'] . "<br></h2> <hr>";
 
     echo "<h3>Body Composition Analysis</h3>";
     echo '<p>Intracellular Water: ' . $row['intra'] . "<br>";
@@ -46,7 +46,7 @@ foreach($tests as $row)
     echo 'Body Fat Mass: ' . $row['body_fat'] . "<br> </p><hr>";
 
     echo "<h3>Muscle_Fat Analysis</h3>";
-    echo 'weight: ' . $row['weight'] . "<br>";
+    echo 'weight: ' . $row['mass'] . "<br>";
     echo 'Skeletal Muscle Mass: ' . $row['smm'] . "<br>";
     echo 'Body Fat Mass: ' . $row['fat'] . "<br> <hr>";
 
@@ -69,7 +69,7 @@ foreach($tests as $row)
 
 
     echo "<h3>Body Composition History</h3>";
-    echo 'Weight: ' . $row['weight'] . "<br>";
+    echo 'Weight: ' . $row['mass'] . "<br>";
     echo 'Skelatal Muscle Mass: ' . $row['smm'] . "<br>";
     echo 'PBF: ' . $row['pbf'] . "<br>";
     echo 'ECW/TBW: ' . $row['water'] . "<br> <br> <br> <br> <br>";

@@ -7,9 +7,9 @@ $query = 'SELECT user_id, name, inumber FROM person';
 $stmt = $db->prepare($query);
 $stmt->execute();
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
-$name = $user['name'];
+$user = $user['user'];
 $inum = $user['inumber'];
-$id = $user['user_id'];
+$id = $user['id'];
 echo "$id";
 
 ?>
@@ -18,11 +18,11 @@ echo "$id";
   <body>
     <form action="DBInsert.php" method="post">
         <h3>Date:</h3>
-        <input type="date" name="date" id="date" required> <br>
+        <input type="date" name="datte" id="datte" required> <br>
         <hr>
 
         <h3>Body Composition Analysis</h3>
-        <input type="hidden" name="name" value="<?php echo $name ?>">
+        <input type="hidden" name="name" value="<?php echo $user ?>">
         <input type="hidden" name="iNum" value="<?php echo $inum ?>">
         <input type="hidden" name="id" value="<?php echo $id ?>">
         Intracellular Water: <input type="text" name="intra" id="inta" required> <br>
@@ -32,7 +32,7 @@ echo "$id";
         <hr>
 
         <h3>Muscle-Fat Analysis</h3>
-        Weight: <input type="text" name="weight" id="weight" required> <br>
+        Weight: <input type="text" name="mass" id="mass" required> <br>
         Skeletal Muscle Mass: <input type="text" name="SMM" id="SMM" required> <br>
         Body Fat Mass: <input type="text" name="fat" id="fat" required> <br>
         <hr>

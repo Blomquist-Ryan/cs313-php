@@ -1,15 +1,4 @@
-CREATE TABLE Person
-(
-	User_id SERIAL NOT NULL PRIMARY KEY	,
-	Name VARCHAR(50) NOT NULL,
-	INumber INT NOT NULL,
-	date DATE NOT NULL,
-	Comp_analysis_id SERIAL NOT NULL REFERENCES Comp_analysis(id),
-	Muscle_fat_id SERIAL NOT NULL REFERENCES Muscle(id),
-	Obesity_id SERIAL NOT NULL REFERENCES Obesity(id),
-	Lean_id SERIAL NOT NULL REFERENCES Lean(id),
-	History_id SERIAL NOT NULL REFERENCES History(id)
-);
+
 CREATE TABLE Comp_analysis
 (
 	Id SERIAL NOT NULL PRIMARY KEY,
@@ -21,17 +10,11 @@ CREATE TABLE Comp_analysis
 CREATE TABLE Muscle
 (
 	Id SERIAL NOT NULL PRIMARY KEY,
-	Weight 	REAL NOT NULL,
+	mass 	REAL NOT NULL,
 	Smm REAL NOT NULL,
 	Fat REAL NOT NULL
 );
-CREATE TABLE Obesity
-(
-	Id SERIAL NOT NULL PRIMARY KEY,
-	Bmi REAL NOT NULL,
-	PBF REAL NOT NULL,
-	Seg_fat_id SERIAL NOT NULL REFERENCES Seg_fat(id)
-);
+
 CREATE TABLE Seg_fat
 (
 	Id SERIAL NOT NULL PRIMARY KEY,
@@ -40,6 +23,13 @@ CREATE TABLE Seg_fat
 	Trunk REAL NOT NULL,
 	Rleg REAL NOT NULL,
 	Lleg REAL NOT NULL
+);
+CREATE TABLE Obesity
+(
+	Id SERIAL NOT NULL PRIMARY KEY,
+	Bmi REAL NOT NULL,
+	PBF REAL NOT NULL,
+	Seg_fat_id SERIAL NOT NULL REFERENCES Seg_fat(id)
 );
 CREATE TABLE Lean
 (
@@ -53,30 +43,51 @@ LlegL REAL NOT NULL
 CREATE TABLE History
 (
 	Id SERIAL NOT NULL PRIMArY KEY,
-	Weight REAL NOT NULL,
+	mass REAL NOT NULL,
 	Smm REAL NOT NULL,
 	PBF REAL NOT NULL,
 	Water REAL NOT NULL
 );
-INSERT INTO person VALUES(1, 'Ryan Blomquist', 087097322, '01-21-2019', 1, 1, 1, 1, 1);
+CREATE TABLE Person
+(
+	id SERIAL NOT NULL PRIMARY KEY,
+	username VARCHAR(50) NOT NULL,
+	INumber INT NOT NULL,
+	datte DATE NOT NULL,
+	Comp_analysis_id SERIAL NOT NULL REFERENCES Comp_analysis(id),
+	Muscle_fat_id SERIAL NOT NULL REFERENCES Muscle(id),
+	Obesity_id SERIAL NOT NULL REFERENCES Obesity(id),
+	Lean_id SERIAL NOT NULL REFERENCES Lean(id),
+	History_id SERIAL NOT NULL REFERENCES History(id)
+);
+
  INSERT INTO person VALUES(2, 'Ryan Blomquist', 087097322, '02-25-2019', 2, 2, 2, 2, 2);
 
- INSERT INTO History VALUES (1, 143.7, 75.4, 7.8, .370);
+ 
  INSERT INTO History VALUES (2, 148.1, 81.1, 4.5, .366);
 
- INSERT INTO Lean VALUES (1, 7.45, 7.56, 59.4, 21.21, 21.01);
+ 
  INSERT INTO Lean VALUES (2, 8.09, 8.25, 63.1, 22.42, 21.96);
 
- INSERT INTO Seg_fat VALUES(1, .2, .2, 4.2, 2.2, 2.2);
+ 
  INSERT INTO Seg_fat VALUES(2, .2, .2, 1.1, 1.5, 1.5);
 
-  INSERT INTO Obesity VALUES(1, 20.1, 7.8, 1);
+  
  INSERT INTO Obesity VALUES(2, 20.7, 4.5, 2);
 
-INSERT INTO Muscle VALUES(1, 143.7, 75.4, 11.2);
+
  INSERT INTO Muscle VALUES(2, 148.1, 81.1, 6.6);
 
- INSERT INTO Comp_analysis VALUES(1, 61.3, 35.9, 35.3, 11.2);
+ 
  INSERT INTO Comp_analysis VALUES(2, 65.5, 38.1, 37.9, 6.6);
 
+ INSERT INTO History VALUES (1, 143.7, 75.4, 7.8, .370);
+INSERT INTO Lean VALUES (1, 7.45, 7.56, 59.4, 21.21, 21.01);
+INSERT INTO Seg_fat VALUES(1, .2, .2, 4.2, 2.2, 2.2);
+INSERT INTO Obesity VALUES(1, 20.1, 7.8, 1);
+INSERT INTO Muscle VALUES(1, 143.7, 75.4, 11.2);
+INSERT INTO Comp_analysis VALUES(1, 61.3, 35.9, 35.3, 11.2);
+INSERT INTO person VALUES(1, 'Ryan Blomquist', 087097322, '01-21-2019', 1, 1, 1, 1, 1);
+
  SELECT * FROM Comp_analysis, Muscle, Obesity, Lean, Seg_fat, History, person;
+ DROP TABLE "person", "history", "lean", "seg_fat", "obesity", "muscle", "comp_analysis";
