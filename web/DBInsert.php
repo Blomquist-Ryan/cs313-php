@@ -32,7 +32,7 @@ $llegl = htmlspecialchars($_POST['LlegL']);
 
 
 $water = htmlspecialchars($_POST['water']);
-$id +=1;
+// $id +=1;
 
 echo "$name <br>
 $inum <br>
