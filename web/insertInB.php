@@ -2,12 +2,12 @@
 require("Dbconnect.php");
 $db = get_db();
 
-$query = 'SELECT user_id, name, inumber FROM person';
+$query = 'SELECT id, username, inumber FROM person';
 
 $stmt = $db->prepare($query);
 $stmt->execute();
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
-$user = $user['user'];
+$user = $user['username'];
 $inum = $user['inumber'];
 $id = $user['id'];
 echo "$id";
