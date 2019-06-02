@@ -87,7 +87,7 @@ try
 {
 $stmtm = $db->prepare('INSERT INTO muscle(mass, smm, fat) Values(:mass, :smm, :fat);');
 $stmtm->bindValue(':mass', $mass, PDO::PARAM_INT);
-$stmtm->bindValue(':smm', $smm, PDO::PARAM_INT);
+$stmtm->bindValue(':smm', $SMM, PDO::PARAM_INT);
 $stmtm->bindValue(':fat', $fat, PDO::PARAM_INT);
 $stmtm->execute();
 }
@@ -146,7 +146,7 @@ try
 {
 $stmtm = $db->prepare('INSERT INTO history(mass, smm, pbf, water) Values(:mass :smm, :pbf, :water);');
 $stmtm->bindValue(':mass', $mass, PDO::PARAM_INT);
-$stmtm->bindValue(':smm', $smm, PDO::PARAM_INT);
+$stmtm->bindValue(':smm', $SMM, PDO::PARAM_INT);
 $stmtm->bindValue(':pbf', $PBF, PDO::PARAM_INT);
 $stmtm->bindValue(':water', $water, PDO::PARAM_INT);
 $stmtm->execute(); 
@@ -170,7 +170,7 @@ die();
  }
 catch(PDOException $ex)
 {
-  echo "error";
+  echo "error in person insert";
   die();
 } 
 ?>
