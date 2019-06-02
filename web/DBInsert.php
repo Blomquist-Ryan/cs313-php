@@ -145,21 +145,6 @@ catch(PDOException $ex)
 
 try
 {
-$stmtm = $db->prepare('INSERT INTO history(mass, smm, pbf, water) Values(:mass :smm, :pbf, :water);');
-$stmtm->bindValue(':mass', $mass, PDO::PARAM_INT);
-$stmtm->bindValue(':smm', $SMM, PDO::PARAM_INT);
-$stmtm->bindValue(':pbf', $PBF, PDO::PARAM_INT);
-$stmtm->bindValue(':water', $water, PDO::PARAM_INT);
-$stmtm->execute(); 
-}
-catch(PDOException $ex)
-{
-  echo "error with history insert <br>";
-  
-}
-
-try
-{
 $stmtp = $db->prepare('INSERT INTO person(username, inumber, datte) Values(:username :inum, :datte);');
 $stmtp->bindValue(':username', $username, PDO::PARAM_STR );
 $stmtp->bindValue(':inum', $inum, PDO::PARAM_INT );
