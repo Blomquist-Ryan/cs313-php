@@ -2,7 +2,7 @@
 require("Dbconnect.php");
 $db = get_db();
 
-$username= htmlspecialchars($_POST['username']);
+$username= htmlspecialchars($_POST['user']);
 $inum = htmlspecialchars($_POST['iNum']);
 $id = htmlspecialchars($_POST['id']);
 
