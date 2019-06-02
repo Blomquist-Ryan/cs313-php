@@ -76,16 +76,29 @@ $stmtc->bindValue(':extra', $extra, PDO::PARAM_INT);
 $stmtc->bindValue(':drylean', $drylean, PDO::PARAM_INT);
 $stmtc->bindValue(':bodyfat', $fat, PDO::PARAM_INT);
 $stmtc->execute();
+}
+catch(PDOException $ex)
+{
+  echo "error with comp_anal insert";
 
+} 
 
+try
+{
 $stmtm = $db->prepare('INSERT INTO muscle(weight, smm, fat) Values(:weight, :smm, :fat);');
 $stmtm->bindValue(':weight', $weight, PDO::PARAM_INT);
 $stmtm->bindValue(':smm', $smm, PDO::PARAM_INT);
 $stmtm->bindValue(':fat', $fat, PDO::PARAM_INT);
 $stmtm->execute();
+}
+catch(PDOException $ex)
+{
+  echo "error with muscle insert";
+  
+} 
 
-
-
+try
+{
 $stmtf = $db->prepare('INSERT INTO seg_fat(rarm, larm, trunk, rleg, lleg) Values(:rarm, :larm, :trunk, :rleg, :lleg);');
 $stmtf->bindValue(':rarm', $rarm, PDO::PARAM_INT);
 $stmtf->bindValue(':larm', $larm, PDO::PARAM_INT);
@@ -93,12 +106,28 @@ $stmtf->bindValue(':trunk', $trunk, PDO::PARAM_INT);
 $stmtf->bindValue(':rleg', $rleg, PDO::PARAM_INT);
 $stmtf->bindValue(':lleg', $lleg, PDO::PARAM_INT);
 $stmtf->execute();
+}
+catch(PDOException $ex)
+{
+  echo "error with seg fat insert";
+  
+}
 
+try
+{
 $stmto = $db->prepare('INSERT INTO obesity(bmi, pbf) Values(:bmi, :pbf);');
 $stmto->bindValue(':bmi', $name, PDO::PARAM_INT);
 $stmto->bindValue(':pbf', $name, PDO::PARAM_INT);
 $stmto->execute();
+}
+catch(PDOException $ex)
+{
+  echo "error with obesity insert";
+  
+}
 
+try
+{
 $stmtl = $db->prepare('INSERT INTO lean(rarml, larml, trunkl, rlegl, llegl) Values(:rarml, :larml, :trunkl, :rlegl, :llegl);');
 $stmtl->bindValue(':rarml', $rarml, PDO::PARAM_INT);
 $stmtl->bindValue(':larml', $larml, PDO::PARAM_INT);
@@ -106,14 +135,30 @@ $stmtl->bindValue(':trunkl', $trunkl, PDO::PARAM_INT);
 $stmtl->bindValue(':rlegl', $rlegl, PDO::PARAM_INT);
 $stmtl->bindValue(':llegl', $llegl, PDO::PARAM_INT);
 $stmtl->execute();
+}
+catch(PDOException $ex)
+{
+  echo "error with lean insert";
+  
+}
 
+try
+{
 $stmtm = $db->prepare('INSERT INTO history(weight, smm, pbf, water) Values(:weight :smm, :pbf, :water);');
 $stmtm->bindValue(':weight', $weight, PDO::PARAM_INT);
 $stmtm->bindValue(':smm', $smm, PDO::PARAM_INT);
 $stmtm->bindValue(':pbf', $name, PDO::PARAM_INT);
 $stmtm->bindValue(':water', $water, PDO::PARAM_INT);
 $stmtm->execute(); 
+}
+catch(PDOException $ex)
+{
+  echo "error with history insert";
+  
+}
 
+try
+{
 $stmtp = $db->prepare('INSERT INTO person(name, inumber, date) Values(:name, :inum, :date);');
 $stmtp->bindValue(':name', $name , PDO::PARAM_STR );
 $stmtp->bindValue(':inum', $inum , PDO::PARAM_INT );
