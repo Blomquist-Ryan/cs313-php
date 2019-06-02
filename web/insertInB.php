@@ -9,7 +9,8 @@ $stmt->execute();
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 $name = $user['name'];
 $inum = $user['inumber'];
-$id = $user['user_id']
+$id = $user['user_id'];
+echo "$id";
 
 ?>
 <!DOCTYPE html>
