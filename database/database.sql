@@ -47,14 +47,13 @@ CREATE TABLE Person
 	id SERIAL NOT NULL PRIMARY KEY,
 	username VARCHAR(50) NOT NULL,
 	INumber INT NOT NULL,
-	datte DATE NOT NULL,
 	Comp_analysis_id SERIAL NOT NULL REFERENCES Comp_analysis(id),
 	Muscle_fat_id SERIAL NOT NULL REFERENCES Muscle(id),
 	Obesity_id SERIAL NOT NULL REFERENCES Obesity(id),
 	Lean_id SERIAL NOT NULL REFERENCES Lean(id)
 );
 
- INSERT INTO person VALUES(2, 'Ryan Blomquist', 087097322, '02-25-2019', 2, 2, 2, 2);
+ INSERT INTO person VALUES(2, 'Ryan Blomquist', 087097322, 2, 2, 2, 2);
  INSERT INTO History VALUES (2, 148.1, 81.1, 4.5, .366);
  INSERT INTO Lean VALUES (2, 8.09, 8.25, 63.1, 22.42, 21.96);
  INSERT INTO Seg_fat VALUES(2, .2, .2, 1.1, 1.5, 1.5); 
@@ -68,7 +67,7 @@ INSERT INTO Seg_fat VALUES(1, .2, .2, 4.2, 2.2, 2.2);
 INSERT INTO Obesity VALUES(1, 20.1, 7.8, 1);
 INSERT INTO Muscle VALUES(1, 143.7, 75.4, 11.2);
 INSERT INTO Comp_analysis VALUES(1, 61.3, 35.9, 35.3, 11.2, .370);
-INSERT INTO person VALUES(1, 'Ryan Blomquist', 087097322, '01-21-2019', 1, 1, 1, 1);
+INSERT INTO person VALUES(1, 'Ryan Blomquist', 087097322, 1, 1, 1, 1);
 
 
 SELECT * FROM Comp_analysis;
