@@ -104,10 +104,9 @@ $stmtl->execute();
 
 
 
-$stmtp = $db->prepare('INSERT INTO person(username, inumber , datte) Values(:username, :inum, $datte);');
+$stmtp = $db->prepare('INSERT INTO person(username, inumber) Values(:username, :inum);');
 $stmtp->bindValue(':username', $username, PDO::PARAM_STR );
 $stmtp->bindValue(':inum', $inum, PDO::PARAM_INT );
- $stmtp->bindValue(':datte', $datte, PDO::PARAM_STR);
 $stmtp->execute(); 
 
 header("location: inbody.php");
