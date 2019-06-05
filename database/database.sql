@@ -54,7 +54,7 @@ CREATE TABLE Person
 	Lean_id SERIAL NOT NULL REFERENCES Lean(id)
 );
 
- INSERT INTO person VALUES(2, 'Ryan Blomquist', 087097322, '02-25-2019', 2, 2, 2, 2, 2);
+ INSERT INTO person VALUES(2, 'Ryan Blomquist', 087097322, '02-25-2019', 2, 2, 2, 2);
  INSERT INTO History VALUES (2, 148.1, 81.1, 4.5, .366);
  INSERT INTO Lean VALUES (2, 8.09, 8.25, 63.1, 22.42, 21.96);
  INSERT INTO Seg_fat VALUES(2, .2, .2, 1.1, 1.5, 1.5); 
