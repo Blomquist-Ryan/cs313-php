@@ -2,7 +2,7 @@
 require("Dbconnect.php");
 $db = get_db();
 
-$query = 'SELECT id, usernameFROM person';
+$query = 'SELECT id, username FROM person';
 
 $stmt = $db->prepare($query);
 $stmt->execute();
