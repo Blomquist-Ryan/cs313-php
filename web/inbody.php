@@ -25,7 +25,7 @@ $tests = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <body>
       <h1><?php echo  $name; ?></h1>
       <?php
-      echo " <a href='access.php?id=$num'> Test $num on $datte <br>";
+      echo " <a href='access.php?id=$num'> Test $num <br>";
       foreach($tests as $test)
       {
           $num = $test['id'];

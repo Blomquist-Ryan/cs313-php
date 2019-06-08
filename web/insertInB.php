@@ -10,10 +10,6 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 $username = $user['username'];
 $inum = $user['inumber'];
 $id = $user['id'];
-echo "$id <br>";
-echo "$username <br>";
-echo "$inum <br>";
-
 ?>
 <!DOCTYPE html>
 <html>
