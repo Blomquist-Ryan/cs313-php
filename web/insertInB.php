@@ -19,10 +19,6 @@ echo "$inum <br>";
 <html>
   <body>
     <form action="DBInsert.php" method="post">
-        <h3>Date:</h3>
-        <input type="date" name="datte" id="datte" required> <br>
-        <hr>
-
         <h3>Body Composition Analysis</h3>
         <input type="hidden" name="username" value="<?php echo $username ?>">
         <input type="hidden" name="iNum" value="<?php echo $inum ?>">

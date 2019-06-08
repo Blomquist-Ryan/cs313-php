@@ -114,7 +114,7 @@ die();
  }
 catch(PDOException $ex)
 {
-  echo "error in person insert";
+  echo "error inserting into database";
   die();
 } 
 ?>
