@@ -34,36 +34,6 @@ $llegl = htmlspecialchars($_POST['LlegL']);
 $water = htmlspecialchars($_POST['water']);
 
 
-echo "$username<br>
-$inum <br>
-$id <br>
-
-$date<br>
-$intra <br>
-$extra <br>
-$drylean <br>
-$fat<br>
-$mass <br>
-$SMM <br>
-
-$BMI <br>
-$PBF<br>
-$rarm <br>
-$larm <br>
-$trunk <br>
-$rleg <br>
-$lleg <br>
-
-
-$rarml<br>
-$larml <br>
-$trunkl <br>
-$rlegl <br>
-$llegl<br>
-
-
-$water 
-";
 
 try{
 

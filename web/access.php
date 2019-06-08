@@ -73,4 +73,6 @@ foreach($tests as $row)
     echo 'Skelatal Muscle Mass: ' . $row['smm'] . "<br>";
     echo 'PBF: ' . $row['pbf'] . "<br>";
     echo 'ECW/TBW: ' . $row['water'] . "<br> <br> <br> <br> <br>";
+
+    echo " <a href='inbody.php'>  return</a>";
 }
